@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="Gun_template" type="Position2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="RayContainer" type="Node2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="RayContainer"]
+enabled = true
+cast_to = Vector2( 1000, 0 )
+collision_mask = 5

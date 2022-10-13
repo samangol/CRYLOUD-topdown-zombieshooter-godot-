@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/paralax.png" type="Texture" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+
+[node name="TestWorld" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 240, 184 )
+maxSpeed = 1000
+friction = 600
+acceleration = 600
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="ParallaxLayer" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxLayer"]
+motion_mirroring = Vector2( 512, 512 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer/ParallaxLayer"]
+texture = ExtResource( 1 )
+centered = false
